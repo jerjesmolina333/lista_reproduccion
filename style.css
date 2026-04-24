@@ -24,15 +24,18 @@ button {
 .header__logo-sub {
   margin-left: 10px;
   margin-bottom: 25px;
-  font-size: 0.6em;
+  font-size: 1em;
+  color: navy;
 }
 
 .container {
   background-image: url(./images/FondoClouds.png);
   background-size: cover;
   border: 1px solid aqua;
+  border-radius: 10px;
   max-width: 468px;
   margin: auto;
+  box-shadow: gray 0px 0px 15px;
 }
 
 .cover {
