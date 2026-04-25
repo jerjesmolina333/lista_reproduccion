@@ -24,17 +24,15 @@ function addSong(artistValue, titleValue) {
   songElement.querySelector(".song__title").textContent = titleValue;
   songsContainer.append(songElement);
 }
-
-addButton.addEventListener("click", function () {
-  const artist = document.querySelector(".input__text_type_artist");
-  const title = document.querySelector(".input__text_type_title");
-
-  addSong(artist.value, title.value);
-  renderHasSongs();
-
-  artist.value = "";
-  title.value = "";
-});
+function setSubmitButtonState(isFormValid) {
+  if (isFormValid) {
+    addButton.removeAttribute("disabled");
+    addButton.classList.remove("input__btn_disabled");
+  } else {
+    addButton.setAttribute("disabled", true);
+    addButton.classList.add("input__btn_disabled");
+  }
+}
 
 resetButton.addEventListener("click", function () {
   const songs = document.querySelectorAll(".song");
@@ -56,13 +54,26 @@ function keyHandler(evt) {
   }
 }
 
-const artistInput = document.querySelector(".input__text_type_artist");
-const titleInput = document.querySelector(".input__text_type_title");
-
-artistInput.addEventListener("keydown", keyHandler);
-
 songsContainer.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("song__like")) {
     evt.target.classList.toggle("song__like_active");
   }
+});
+
+const form = document.forms.add;
+const artist = form.elements.artist;
+const title = form.elements.title;
+
+form.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  addSong(artist.value, title.value);
+  renderHasSongs();
+  form.reset();
+  setSubmitButtonState(false);
+});
+form.addEventListener("input", function (evt) {
+  const isValid = artist.value.length > 0 && title.value.length > 0;
+  console.log("IsValid: ", isValid);
+  setSubmitButtonState(isValid);
 });

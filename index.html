@@ -21,20 +21,29 @@
         <h1 class="cover__heading">Lista de reproducción</h1>
       </div>
       <div class="block">
-        <h3>Agregar canción</h3>
-        <div class="input">
-          <input
-            type="text"
-            placeholder="Nombre"
-            class="input__text input__text_type_title"
-          />
-          <input
-            type="text"
-            placeholder="Artista"
-            class="input__text input__text_type_artist"
-          />
-          <button class="input__btn input__btn_action_add">Agregar</button>
-        </div>
+        <form name="add">
+          <h3>Agregar una canción</h3>
+          <div class="input">
+            <input
+              type="text"
+              name="title"
+              placeholder="título"
+              class="input__text input__text_type_title"
+            />
+            <input
+              type="text"
+              name="artist"
+              placeholder="artista"
+              class="input__text input__text_type_artist"
+            />
+            <button
+              class="input__btn input__btn_action_add input__btn_disabled"
+              type="submit"
+            >
+              Agregar
+            </button>
+          </div>
+        </form>
       </div>
       <div class="block">
         <h3>Agregada</h3>

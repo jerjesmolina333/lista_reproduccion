@@ -107,6 +107,7 @@ h3 {
 .input__btn_disabled {
   background-color: #f1f1f1;
   cursor: default;
+  color: rgb(186, 184, 184);
 }
 
 .no-songs {
@@ -130,7 +131,7 @@ h3 {
   display: flex;
   position: relative;
   margin-top: 5px;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #137d9088;
   border-radius: 5px;
   font-size: 0.8em;
   padding: 0 10px;
